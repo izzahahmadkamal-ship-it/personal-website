@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friends | Nurizzah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { 
+      font-family: Helvetica, sans-serif; 
+      background-color: #fff; 
+      color: #111; 
+      display: flex; 
+      min-height: 100vh; 
+    }
+
+    /* Sidebar */
+    nav {
+      width: 180px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      position: fixed;
+      height: 100%;
+    }
+    nav img {
+      width: 100px; 
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid maroon;
+      object-fit: cover;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+    nav a:hover { background-color: maroon; }
+
+    /* Main content */
+    main {
+      margin-left: 180px;
+      flex: 1;
+      padding: 40px;
+    }
+
+    header { 
+      text-align: center; 
+      margin-bottom: 30px; 
+      padding-bottom: 10px;
+      border-bottom: 2px solid maroon;
+    }
+    header h1 { 
+      font-family:'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 48px; 
+      color: maroon; 
+      margin-bottom: 5px;
+    }
+
+    h2 { color: maroon; margin-bottom: 20px; text-align: center; }
+    p.intro { text-align: center; margin-bottom: 40px; font-size: 18px; }
+
+    .friend-stage { 
+      margin-bottom: 50px; 
+      max-width: 800px; 
+      margin-left: auto; 
+      margin-right: auto; 
+      text-align: left; 
+    }
+    .friend-stage h3 { color: maroon; margin-bottom: 10px; }
+    .friend-stage p { line-height: 1.5; }
+
+    .friend-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      justify-content: center;
+    }
+    .friend-images img {
+      width: 48%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .friend-images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    footer { 
+      text-align:center; 
+      margin-top:60px; 
+      color:#ccc; 
+      font-size:14px; 
+      padding:20px; 
+      border-top:1px solid #333; 
+    }
+
+    /* ---------- MOBILE RESPONSIVE ---------- */
+    @media(max-width:700px){
+      body { flex-direction: column; }
+
+      nav { 
+        position: static; 
+        width:100%; 
+        height:auto; 
+        flex-direction: row; 
+        justify-content: space-around; 
+        padding-top:10px; 
+      }
+      nav img { display:none; }
+
+      main { margin-left:0; padding:20px; }
+
+      header h1 { font-size: 32px; }
+
+      .friend-images img { width:100%; height:auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="Pics/Home Nurizzah.jpg" alt="Nurizzah">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="friends.html">Friends</a>
+    <a href="hobby.html">Hobby</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>NURIZZAH'S PERSONAL WEBSITE</h1>
+    </header>
+
+    <h2>FRIENDS</h2>
+    <p class="intro">Here are some of the amazing people I’ve met along the way! 👯‍♀️💖</p>
+
+    <!-- Childhood Friends -->
+    <section class="friend-stage">
+      <h3>Childhood Friends 👶✨</h3>
+      <p>These are my friends from early childhood who have shared so many memories and adventures with me! 🏀🎨</p>
+      <div class="friend-images">
+        <img src="Pics/childfriend1.jpg" alt="Childhood Friend 1">
+        <img src="Pics/childfriend2.jpg" alt="Childhood Friend 2">
+      </div>
+    </section>
+
+    <!-- High School Friends -->
+    <section class="friend-stage">
+      <h3>High School Friends 🏫🎒</h3>
+      <p>Friends I met during my school years. We studied, played, and grew together! 📚⚽</p>
+      <div class="friend-images">
+        <img src="Pics/hsfriend1.jpg" alt="High School Friend 1">
+        <img src="Pics/hsfriend2.jpg" alt="High School Friend 2">
+        <img src="Pics/hsfriend3.jpg" alt="High School Friend 3">
+        <img src="Pics/hsfriend4.jpg" alt="High School Friend 4">
+        <img src="Pics/hsfriend5.jpg" alt="High School Friend 5">
+        <img src="Pics/hsfriend6.jpg" alt="High School Friend 6">
+      </div>
+    </section>
+
+    <!-- University Friends -->
+    <section class="friend-stage">
+      <h3>University Friends 🎓💡</h3>
+      <p>My current friends at university. We share classes, projects, and lots of fun moments! 🎉💻</p>
+      <div class="friend-images">
+        <img src="Pics/unifriend1.jpg" alt="University Friend 1">
+        <img src="Pics/unifriend2.jpg" alt="University Friend 2">
+        <img src="Pics/unifriend3.jpg" alt="University Friend 3">
+        <img src="Pics/unifriend4.jpg" alt="University Friend 4">
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 This website is for educational purposes only | Nurizzah Batrisyia Binti Ahmad Kamal
+      <br><span id="time"></span>
+    </footer>
+  </main>
+
+  <script>
+    function updateTime() {
+      const now= new Date ();
+      const timeString = now.toLocaleString("en-MY", {
+        dateStyle: "full",
+        timeStyle: "medium"
+      })
+      document.getElementById("time").textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+  
+</body>
+</html>

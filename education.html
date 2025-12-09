@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Education | Nurizzah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Helvetica, sans-serif;
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    nav {
+      width: 180px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      position: fixed;
+      height: 100%;
+    }
+
+    nav img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid maroon;
+      object-fit: cover;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { background-color: maroon; }
+
+    /* Main content */
+    main {
+      margin-left: 180px;
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid maroon;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 48px;
+      color: maroon;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: maroon;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p { text-align: center; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: maroon;
+      z-index: 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 30px;
+      align-items: stretch;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+
+    .timeline-item.reverse { flex-direction: row-reverse; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: maroon;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item .timeline-img img {
+      width: 450px;
+      height: 300px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .timeline-item .content {
+      width: 450px;
+      height: 300px;
+      background-color: rgba(200,0,0,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-left: 4px solid maroon;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-item .content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .timeline-item .content h3 {
+      color: maroon;
+      margin-bottom: 15px;
+      border-bottom: 2px solid maroon;
+      display: inline-block;
+      padding-bottom: 5px;
+      text-align: center;
+    }
+
+    .timeline-item .content p {
+      line-height: 1.6;
+    }
+
+    /* Honorable Mention Video */
+    .honorable-mention {
+      width: 100%;
+      max-width: 800px;
+      background-color: rgba(200,0,0,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin: 40px auto 0 auto;
+      text-align: left;
+    }
+
+    .honorable-mention h3 { 
+      color: maroon; 
+      margin-bottom: 15px; 
+      text-align:center;
+    }
+
+    .honorable-mention video {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #ccc;
+      font-size: 14px;
+      padding: 20px;
+      border-top: 1px solid #333;
+      width: 100%;
+    }
+
+    @media (max-width:700px){
+      nav {
+        position: static;
+        width:100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top:10px;
+      }
+      main {
+        margin-left:0;
+        padding:20px;
+      }
+      .timeline-item, .timeline-item.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+      .timeline-item .content, .timeline-item .timeline-img img {
+        width: 100%;
+        height: auto;
+      }
+      .honorable-mention {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img src="Pics/Home Nurizzah.jpg" alt="Nurizzah">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="friends.html">Friends</a>
+    <a href="hobby.html">Hobby</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>NURIZZAH'S PERSONAL WEBSITE</h1>
+    </header>
+
+    <h2>🎓 MY EDUCATIONAL JOURNEY</h2>
+    <p>📚 From Kindergarten to University — here’s how my learning adventure shaped me!</p>
+    <br>
+
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="content">
+          <h3>🌼 Kindergarten</h3>
+          <p><strong>Tadika Islam Naim, Klang | 2009 - 2011</strong></p>
+          <p>Learned the basics of reading, writing, and making friends — where curiosity first bloomed!</p>
+        </div>
+        <div class="timeline-img">
+          <img src="Pics/kindergarten.jpg" alt="Kindergarten">
+        </div>
+      </div>
+
+      <div class="timeline-item reverse">
+        <div class="content">
+          <h3>🏫 Primary School</h3>
+          <p><strong>SK Kampung Jawa 2, Klang | 2012 - 2017</strong></p>
+          <p>Gained foundational knowledge and joined sports competitions, receiving the Olahragawati award.</p>
+        </div>
+        <div class="timeline-img">
+          <img src="Pics/Primary.jpg" alt="Primary School">
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="content">
+          <h3>🎒 Secondary School</h3>
+          <p><strong>SMK Shahbandaraya | 2018 - 2023</strong></p>
+          <p>Dived into science and math, joined Netball 🏐 and English Society 🗣️, and remained active as a school athlete.</p>
+        </div>
+        <div class="timeline-img">
+          <img src="Pics/secondary.jpg" alt="Secondary School">
+        </div>
+      </div>
+
+      <div class="timeline-item reverse">
+        <div class="content">
+          <h3>🎓 Diploma / University</h3>
+          <p><strong>Universiti Teknologi MARA, Machang | 2023 - Present</strong></p>
+          <p>Pursuing a Diploma in Information Management 💻 — exploring tech, knowledge, and creativity every day!</p>
+        </div>
+        <div class="timeline-img">
+          <img src="Pics/university.jpg" alt="University">
+        </div>
+      </div>
+    </div>
+
+    <div class="honorable-mention">
+      <h3>🏅 HONORABLE MENTION</h3>
+      <p>A proud moment on stage receiving my award!</p>
+      <video controls>
+        <source src="Pics/award.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <br>
+      <p>✨ Anugerah Tokoh Kecemerlangan Akademik | 22 Oktober 2025 ✨</p>
+    </div>
+
+    <footer>
+      &copy; 2025 This website is for educational purposes only | Nurizzah Batrisyia Binti Ahmad Kamal
+      <br><span id="time"></span>
+    </footer>
+  </main>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleString("en-MY", {
+        dateStyle: "full",
+        timeStyle: "medium"
+      });
+      document.getElementById("time").textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+
+</body>
+</html>

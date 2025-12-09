@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Experience | Nurizzah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Helvetica, sans-serif;
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    nav {
+      width: 180px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      position: fixed;
+      height: 100%;
+    }
+
+    nav img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid maroon;
+      object-fit: cover;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { background-color: maroon; }
+
+    /* Main content */
+    main {
+      margin-left: 180px;
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid maroon;
+    }
+
+    header h1 { 
+      font-family:'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 48px; 
+      color: maroon; 
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: maroon;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p.description {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Experience cards */
+    .experience-card {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .experience-card.reverse { flex-direction: row-reverse; }
+
+    .experience-card .content {
+      flex: 1;
+      min-width: 300px;
+      background-color: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 4px solid maroon;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .experience-card .content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(255,0,0,0.2);
+    }
+
+    .experience-card .content h3 {
+      color: maroon;
+      margin-bottom: 15px;
+      border-bottom: 2px solid maroon;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .experience-card .content p {
+      line-height: 1.6;
+    }
+
+    .experience-card .images {
+      flex: 1;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-width: 300px;
+    }
+
+    .experience-card .images img {
+      width: calc(50% - 10px);
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .experience-card .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      width: 100%;
+      color: #ccc;
+    }
+
+    @media (max-width: 700px) {
+      nav { 
+        position: static; 
+        width: 100%; 
+        flex-direction: row; 
+        justify-content: space-around; 
+        padding-top: 10px;
+      }
+      main { 
+        margin-left: 0; 
+        padding: 20px; 
+      }
+      .experience-card, .experience-card.reverse { 
+        flex-direction: column; 
+        text-align: center; 
+      }
+      .experience-card .images img { 
+        width: 100%; 
+        height: auto; 
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img src="Pics/Home Nurizzah.jpg" alt="Nurizzah">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="friends.html">Friends</a>
+    <a href="hobby.html">Hobby</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>NURIZZAH'S PERSONAL WEBSITE</h1>
+    </header>
+
+    <h2>EXPERIENCE</h2>
+    <p class="description">From internships to visits, these experiences helped me grow and explore! 🚀👩‍💻📖</p>
+
+    <!-- Internship Card -->
+    <div class="experience-card">
+      <div class="content">
+        <h3>Internship at TNB POWER GENERATION SDN BHD 💼</h3>
+        <p><strong>Duration:</strong> 28 July 2025 - 19 September 2025</p>
+        <br>
+        <p>During my internship, I was assigned to the ICT unit under the Technology and Engineering department. I assisted staff with ICT problems, updated internal websites and servers, and worked on a PowerBI project. Learned teamwork, project management, and gained hands-on experience.</p>
+      </div>
+      <div class="images">
+        <img src="Pics/internship1.jpg" alt="Internship 1">
+        <img src="Pics/internship2.jpg" alt="Internship 2">
+        <img src="Pics/internship3.jpg" alt="Internship 3">
+        <img src="Pics/internship4.jpg" alt="Internship 4">
+      </div>
+    </div>
+
+    <!-- Archive Visit Card -->
+    <div class="experience-card reverse">
+      <div class="content">
+        <h3>University Archive Visit 📚</h3>
+        <p><strong>Date:</strong> 05 November 2025</p>
+        <br>
+        <p>I visited the university archive with my classmates to explore how documents are kept and preserved. We learned about binding, storage, and general archiving processes. It was very insightful!</p>
+      </div>
+      <div class="images">
+        <img src="Pics/archive1.jpg" alt="Archive 1">
+        <img src="Pics/archive2.jpg" alt="Archive 2">
+        <img src="Pics/archive3.jpg" alt="Archive 3">
+        <img src="Pics/archive4.jpg" alt="Archive 4">
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 This website is for educational purposes only | Nurizzah Batrisyia Binti Ahmad Kamal
+      <br><span id="time"></span>
+    </footer>
+  </main>
+
+  <script>
+    function updateTime() {
+      const now= new Date();
+      const timeString = now.toLocaleString("en-MY", {
+        dateStyle: "full",
+        timeStyle: "medium"
+      });
+      document.getElementById("time").textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+
+</body>
+</html>

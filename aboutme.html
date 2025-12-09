@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me | Nurizzah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: Helvetica, sans-serif;
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    nav {
+      width: 180px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      position: fixed;
+      height: 100%;
+    }
+
+    nav img {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid maroon;
+      object-fit: cover;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      width: 100%;
+      text-align: center;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { background-color: maroon; }
+
+    main {
+      margin-left: 180px;
+      flex: 1;
+      padding: 40px 20px;
+    }
+
+    header { 
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid maroon;
+    }
+    header h1 { 
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight:900;
+      color: maroon;
+    }
+
+    /* About Intro */
+    .about-intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .about-intro img {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .about-intro div { max-width: 500px; }
+
+    .about-intro h1 { color: maroon; font-size: 32px; margin-bottom: 10px; }
+    .about-intro p { font-size: 18px; line-height: 1.6; color: black; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 40px 0;
+      padding-left: 60px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px; top:0;
+      height:100%;
+      width:4px;
+      background: maroon;
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display:flex;
+      align-items:flex-start;
+      gap:15px;
+      margin-bottom:30px;
+    }
+
+    .timeline-icon {
+      flex-shrink:0;
+      width:30px; height:30px;
+      background:maroon;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .timeline-item p { font-size:18px; color:black; }
+
+    /* Info Cards */
+    .info-card {
+      background-color: rgba(255,255,255,0.05);
+      color: black;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid maroon;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(255,0,0,0.2);
+    }
+
+    .info-card h2 {
+      color: maroon;
+      font-size: 24px;
+      margin-bottom:15px;
+      border-bottom:2px solid maroon;
+      display:inline-block;
+      padding-bottom:5px;
+    }
+
+    .horizontal-card {
+      display:flex;
+      align-items:flex-start;
+      gap:20px;
+      flex-wrap: wrap;
+    }
+
+    .horizontal-card img {
+      width:150px; height:150px;
+      border-radius:15px;
+      object-fit:cover;
+    }
+
+    .horizontal-card .card-content { flex:1; }
+
+    .music-btn, .youtube-btn {
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 20px;
+      background-color: maroon;
+      color:white;
+      text-decoration:none;
+      border:none;
+      border-radius:8px;
+      font-weight:bold;
+      cursor:pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .music-btn:hover, .youtube-btn:hover {
+      background-color: #a60000;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align:center;
+      margin-top:60px;
+      color:#ccc;
+      font-size:14px;
+      padding:20px;
+      border-top:1px solid #333;
+    }
+
+    @media (max-width:700px){
+      nav { position: static; width:100%; height:auto; flex-direction: row; justify-content: space-around; padding-top:10px; }
+      nav img { display:none; }
+      main { margin-left:0; padding:20px; }
+      .about-intro { flex-direction: column; text-align:center; }
+      .horizontal-card { flex-direction: column; }
+      .horizontal-card img { width:100%; height:auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="Pics/Home Nurizzah.jpg" alt="Nurizzah">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="friends.html">Friends</a>
+    <a href="hobby.html">Hobby</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>NURIZZAH'S PERSONAL WEBSITE</h1>
+    </header>
+
+    <!-- About Intro -->
+    <div class="about-intro">
+      <img src="Pics/aboutme1.jpg" alt="Nurizzah">
+      <div>
+        <h1>Nurizzah Batrisyia Binti Ahmad Kamal</h1>
+        <p>Hi! You can call me <strong>Izzah</strong>. I’m a passionate learner with an interest in technology, gaming, and collecting. Through this website, I share my journey, experiences, and the things I love most.</p>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="timeline-item"><span class="timeline-icon">🏠</span><p>Hometown: Shah Alam, Selangor</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🎂</span><p>Age: 20</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🗓️</span><p>Date of Birth: 24 May 2005</p></div>
+      <div class="timeline-item"><span class="timeline-icon">💬</span><p>Personality Type: INFJ</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🗣️</span><p>Languages: Malay, English</p></div>
+      <div class="timeline-item"><span class="timeline-icon">✨</span><p>Favourite Quote: "Do or do not. There is no try" – Master Yoda</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🎮</span><p>I love collecting figurines like Funko Pops and Gundams (when I have space).</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🎵</span><p>I always listen to music when doing assignments; it helps me focus.</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🕒</span><p>I prefer late night study sessions over early mornings.</p></div>
+      <div class="timeline-item"><span class="timeline-icon">🤔</span><p>I am an overthinker, which helps me think through decisions and perfecting my assignments.</p></div>
+    </div>
+
+    <!-- Favourite Song Card -->
+    <div class="info-card horizontal-card">
+      <img src="Pics/multo.jpg" alt="Multo">
+      <div class="card-content">
+        <h2>Favourite Song 🎵</h2>
+        <p>One of my favourite songs is <strong>Multo by Cup of Joe</strong>. They are Philippine-based and I like the song for its vibe.</p>
+        <audio id="songAudio" src="song/Multo.mp3"></audio>
+        <button onclick="document.getElementById('songAudio').play()" class="music-btn">Play Song</button>
+        <button onclick="document.getElementById('songAudio').pause()" class="music-btn">Pause Song</button>
+      </div>
+    </div>
+
+    <!-- Favourite YouTuber Card -->
+    <div class="info-card horizontal-card">
+      <img src="Pics/spawnpoint.jpg" alt="Spawnpoint">
+      <div class="card-content">
+        <h2>Favourite YouTuber 🎬</h2>
+        <p>I enjoy watching <strong>SpawnPoiint</strong> on YouTube. He posts gaming-related videos, including the latest releases and updates.</p>
+        <a href="https://www.youtube.com/@SpawnPoiint" target="_blank" class="youtube-btn">Visit Channel</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 This website is for educational purposes only | Nurizzah Batrisyia Binti Ahmad Kamal
+      <br><span id="time"></span>
+    </footer>
+  </main>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleString("en-MY", { dateStyle: "full", timeStyle: "medium" });
+      document.getElementById("time").textContent = timeString;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
